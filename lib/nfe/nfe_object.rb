@@ -83,11 +83,10 @@ module Nfe
             list.push(obj.respond_to?(:to_hash) ? obj.to_hash : value)
           end
           result[key] = list
-        else if value.respond_to?(:to_hash)
-               result[key] = value.to_hash
-             else
-               result[key] =  value
-             end
+        elsif value.respond_to?(:to_hash)
+          result[key] = value.to_hash
+        else
+         result[key] =  value
         end
         result
       end
