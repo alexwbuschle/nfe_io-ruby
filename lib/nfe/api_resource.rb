@@ -40,7 +40,7 @@ module Nfe
       rescue RestClient::Exception => e
         raise e
       end
-      return { } if response.empty?
+      return { } if response == nil || response.empty?
       JSON.parse(response)
     end
 
