@@ -40,7 +40,8 @@ module Nfe
       rescue RestClient::Exception => e
         raise e
       end
-      JSON.parse(response.to_str)
+      return { } if response.empty?
+      JSON.parse(response)
     end
 
     def self.included(base)
